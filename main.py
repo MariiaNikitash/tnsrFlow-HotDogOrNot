@@ -37,6 +37,8 @@ train_ds = train_ds.map(
                                   tf.cast(label == HOT_DOG_CLASS, tf.int32))
 )
 
+
+
 valid_ds = train_ds.map(
     lambda image, label: (tf.cast(tf.image.resize(image, [MAX_SIDE_LEN, MAX_SIDE_LEN]), dtype=tf.int32),
                                   tf.cast(label == HOT_DOG_CLASS, tf.int32))
